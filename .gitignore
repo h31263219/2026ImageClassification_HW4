@@ -1,0 +1,47 @@
+# Data
+hw4_realse_dataset/
+example_submmision/
+__MACOSX/
+
+# Course materials (not redistributed)
+*.pptx
+*.pdf
+!314560017_HW4.pdf
+
+# Checkpoints and large artifacts
+**/*.pt
+**/*.pth
+**/best.pt
+**/latest.pt
+
+# Submission archives + intermediate prediction files
+*.zip
+pred*.npz
+
+# Per-run output directories: keep the metrics (train_log.jsonl, args.json)
+# but ignore everything else (checkpoints, stdout dumps, queue logs).
+output*/train_stdout.log
+output*/queue.log
+output*/best.pt
+output*/latest.pt
+
+# Local snapshots / duplicates
+leaderboard_snipeshot.png
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Local agent state
+.claude/
+memory/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
