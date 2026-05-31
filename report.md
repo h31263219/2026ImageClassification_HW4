@@ -226,6 +226,8 @@ TTA-8 wrapper for fair comparison.)
 
 **Iterative gain over baseline:** +1.15 val / **+1.03 dB test**.
 
+<div style="page-break-before: always;"></div>
+
 ### 3.2 Iterative Improvement Trajectory
 
 ![**Figure 1. Three-step iterative improvement on the validation

@@ -91,7 +91,8 @@ def main() -> None:
     table { border-collapse: collapse; margin: 8pt 0; }
     th, td { border: 1px solid #bbb; padding: 4pt 8pt; font-size: 10pt; }
     th { background: #f0f0f0; }
-    img { max-width: 100%; height: auto; display: block; margin: 6pt auto; }
+    img { width: 100%; max-width: 100%; height: auto; display: block; margin: 6pt auto;
+          page-break-inside: avoid; }
     blockquote { border-left: 3px solid #888; color: #555;
                  padding-left: 10pt; margin-left: 0; font-style: italic; }
     a { color: #1f3a93; text-decoration: none; }
