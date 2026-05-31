@@ -72,7 +72,7 @@ def fig_training_curves(log: list[dict]) -> None:
 
 def fig_iterative_gains(light_log, med_log, p192_log) -> None:
     """Three-model overlay showing the iterative improvement story."""
-    fig, ax = plt.subplots(1, 1, figsize=(11, 5.5))
+    fig, ax = plt.subplots(1, 1, figsize=(14, 7.5))
 
     for log, label, color in [
         (light_log, "light (14.5M) + L1 + patch128 — test 29.75", "#999999"),
@@ -81,21 +81,22 @@ def fig_iterative_gains(light_log, med_log, p192_log) -> None:
     ]:
         eps = [r["epoch"] for r in log]
         vp = [r["val_psnr"] for r in log]
-        ax.plot(eps, vp, label=label, color=color, linewidth=1.7)
+        ax.plot(eps, vp, label=label, color=color, linewidth=2.2)
 
-    ax.axhline(29.75, color="#999999", linestyle=":", alpha=0.5, linewidth=0.9)
-    ax.axhline(30.10, color="#ff7f0e", linestyle=":", alpha=0.5, linewidth=0.9)
-    ax.axhline(30.78, color="#1f77b4", linestyle=":", alpha=0.5, linewidth=0.9)
-    ax.set_xlabel("Epoch", fontsize=12)
-    ax.set_ylabel("Validation PSNR (dB, single-pass)", fontsize=12)
-    ax.set_title("Iterative improvement on the validation set\n(each design change isolates one architectural lever)", fontsize=12)
-    ax.legend(loc="lower right", fontsize=10.5)
+    ax.axhline(29.75, color="#999999", linestyle=":", alpha=0.6, linewidth=1.2)
+    ax.axhline(30.10, color="#ff7f0e", linestyle=":", alpha=0.6, linewidth=1.2)
+    ax.axhline(30.78, color="#1f77b4", linestyle=":", alpha=0.6, linewidth=1.2)
+    ax.set_xlabel("Epoch", fontsize=16)
+    ax.set_ylabel("Validation PSNR (dB, single-pass)", fontsize=16)
+    ax.set_title("Iterative improvement on the validation set\n(each design change isolates one architectural lever)",
+                 fontsize=17)
+    ax.legend(loc="lower right", fontsize=14)
     ax.grid(True, alpha=0.3)
-    ax.tick_params(labelsize=11)
+    ax.tick_params(labelsize=14)
 
     plt.tight_layout()
     out = FIG_DIR / "fig_iterative_gains.png"
-    plt.savefig(out, dpi=180, bbox_inches="tight")
+    plt.savefig(out, dpi=200, bbox_inches="tight")
     plt.close()
     print(f"Saved {out}")
 
